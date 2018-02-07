@@ -1,5 +1,12 @@
 def find_outlier(integers):
-    if len(integers) % 2 == 1 and sum(integers) % 2 == 0:
+    even_counter, odd_counter = 0, 0
+    for number in integers:
+        if number % 2 == 0:
+            even_counter += 1
+        else:
+            odd_counter += 1
+
+    if odd_counter > 1:
         for number in integers:
             if number % 2 == 0:
                 return number
