@@ -1,3 +1,7 @@
+# Two fighters, one winner.
+# https://www.codewars.com/kata/577bd8d4ae2807c64b00045b
+
+
 class Fighter(object):
     def __init__(self, name, health, damage_per_attack):
         self.name = name

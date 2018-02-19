@@ -1,3 +1,7 @@
+# Find The Parity Outlier
+# https://www.codewars.com/kata/5526fc09a1bbd946250002dc
+
+
 def find_outlier(integers):
     even_counter, odd_counter = 0, 0
     for number in integers:
