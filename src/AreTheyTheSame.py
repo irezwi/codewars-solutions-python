@@ -1,9 +1,11 @@
+import math
+
+
 def comp(array1, array2):
-    if len(array1) == 0 or len(array2) == 0:
+    if array1 is None or array2 is None:
         return False
     else:
-        array3 = [x**2 for x in array1]
-        if sorted(array3) == sorted(array2) and len(array3) == len(array2):
-            return True
-        else:
-            return False
+        for i in range(0, len(array2)):
+            if math.sqrt(array2[i]) not in array1:
+                return False
+        return True
