@@ -7,4 +7,3 @@ def to_camel_case(text):
     for i in range(1, len(words)):
         words[i] = words[i].title()
     return "".join(words)
-

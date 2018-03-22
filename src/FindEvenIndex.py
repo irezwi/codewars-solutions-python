@@ -3,16 +3,12 @@
 
 
 def find_even_index(arr):
-    right = 0
-    left = 0
     for i in range(0, len(arr)):
+        right, left = 0, 0
         for j in range(i + 1, len(arr)):
             right += arr[j]
         for k in range(0, i - 1 + 1):
             left += arr[k]
         if right == left:
-            print(i)
             return i
-        right = 0
-        left = 0
     return -1
