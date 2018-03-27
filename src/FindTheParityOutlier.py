@@ -10,6 +10,7 @@ def find_outlier(integers):
         else:
             odd_counter += 1
 
+    # Checks if outlier is odd or even number
     if odd_counter > 1:
         for number in integers:
             if number % 2 == 0:
