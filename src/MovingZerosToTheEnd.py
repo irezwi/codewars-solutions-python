@@ -2,15 +2,10 @@
 # https://www.codewars.com/kata/52597aa56021e91c93000cb0
 
 
+from itertools import compress
+
+
 def move_zeros(array):
-    zeros, arr = [], []
-    for number in array:
-        if not isinstance(number, bool) and number == 0:
-            zeros.append(0)
-        else:
-            arr.append(number)
-    return arr + zeros
-
-
-a = ["a", 0, 0, "b", None, "c", "d", 0, 1, False, 0, 1, 0, 3, [], 0, 1, 9, 0, 0, {}, 0, 0, 9]
-print(move_zeros(a))
+    non_zero = list(compress(array, map(lambda x: x != 0 or x is False, array)))
+    zeroes = [0] * (len(array) - len(non_zero))
+    return non_zero + zeroes
