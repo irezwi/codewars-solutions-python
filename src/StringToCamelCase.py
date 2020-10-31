@@ -3,7 +3,7 @@
 
 
 def to_camel_case(text):
-    words = list(text.replace('-', ' ').replace('_', ' ').split())
-    for i in range(1, len(words)):
-        words[i] = words[i].title()
-    return "".join(words)
+    if text:
+        words = text.replace('-', ' ').replace('_', ' ').split()
+        text = "".join([word.title() if index > 0 else word for index, word in enumerate(words)])
+    return text
