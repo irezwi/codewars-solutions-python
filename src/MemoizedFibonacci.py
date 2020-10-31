@@ -1,10 +1,13 @@
 # Memoized Fibonacci
 # https://www.codewars.com/kata/529adbf7533b761c560004e5
 
+from functools import wraps
+
 
 def cache(func):
     cache_dict = dict()
 
+    @wraps(func)
     def func_wrapper(*args, **kwargs):
         n = args[0]
         if n not in cache_dict:
